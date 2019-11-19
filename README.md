@@ -1,5 +1,5 @@
 ##
-[![asciicast](https://asciinema.org/a/2H6NpCD7Xgrr8rH8DvMGwpvET.svg)](https://asciinema.org/a/2H6NpCD7Xgrr8rH8DvMGwpvET)
+<script id="asciicast-2H6NpCD7Xgrr8rH8DvMGwpvET" src="https://asciinema.org/a/2H6NpCD7Xgrr8rH8DvMGwpvET.js" async></script>
 
 # brain-games
 
