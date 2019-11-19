@@ -2,8 +2,8 @@
 
 import { askUserName, askQ, greeting } from '../index';
 
-greeting('even');
+greeting('calc');
 
 askUserName();
 
-askQ('even', 0);
+askQ('calc', 0);
