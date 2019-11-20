@@ -67,7 +67,7 @@ const generateData = (game) => {
         case 'even':
             return randomInteger(99);
         case 'calc':
-            return makeCalc(randomOperator(randomInteger(3)), randomInteger(99), randomInteger(99));
+            return makeCalc(randomOperator(randomInteger(3)), randomInteger(9), randomInteger(9));
     }
 };
 
