@@ -54,24 +54,35 @@ const randomOperator = (num) => {
 const makeCalc = (operator, arg1, arg2) => (message) => {
     switch (message) {
         case 'getOperator':
-        return operator;
+            return operator;
         case 'getArg1':
-        return arg1;
+            return arg1;
         case 'getArg2':
-        return arg2;
+            return arg2;
+    }
+};
+
+const makeGCD = (arg1, arg2) => (message) => {
+    switch (message) {
+        case 'getArg1':
+            return arg1;
+        case 'getArg2':
+            return arg2;
     }
 };
   
 const getOperator = (calc) => calc('getOperator');
-const getArg1 = (calc) => calc('getArg1');
-const getArg2 = (calc) => calc('getArg2');
+const getArg1 = (data) => data('getArg1');
+const getArg2 = (data) => data('getArg2');
 
 const generateData = (game) => {
     switch (game) {
         case 'even':
             return randomInteger(99);
         case 'calc':
-            return makeCalc(randomOperator(randomInteger(3)), randomInteger(9), randomInteger(9));
+            return makeCalc(randomOperator(randomInteger(3)), randomInteger(10), randomInteger(10));
+        case 'gcd':
+            return makeGCD(randomInteger(10), randomInteger(10));
     }
 };
 
@@ -89,6 +100,9 @@ const getCorrectAnswer = (game, data) => {
                 case '*':
                     return (getArg1(data) * getArg2(data)).toString();
             }
+            break;
+        case 'gcd':
+            //
     }
 };
 
@@ -97,8 +111,9 @@ const dataToSring = (game, data) => {
         case 'even':
             return `${data}`;
         case 'calc':
-            //return getArg1(data) + ' ' + getOperator(data) + ' ' + getArg2(data);
             return `${getArg1(data)} ${getOperator(data)} ${getArg2(data)}`;
+        case 'gcd':
+            return `${getArg1(data)} ${getArg2(data)}`;
     }
 };
 
@@ -115,7 +130,7 @@ export const askQ = (game, acc) => {
     
     const correctAnswer = getCorrectAnswer(game, data);
     
-    const userAnswer = readlineSync.question('Question: ' + dataToSring(game, data) + '\nYour answer: ');
+    const userAnswer = readlineSync.question(`Question: ${dataToSring(game, data)} \nYour answer: `);
     
     const testAnswer = isCorrect(correctAnswer, userAnswer);
     if (testAnswer === true) {
