@@ -51,6 +51,16 @@ const randomOperator = (num) => {
     }
 };
 
+const findGCD = (arg1, arg2) => {
+    const min = (arg1 <= arg2) ? arg1 : arg2;
+    const findCycle = (min) => {
+        if (min < 2 ) return 1;
+        if (arg1 % min === 0 && arg2 % min === 0) return min;
+        return findCycle(min - 1);
+    };
+    return findCycle(min);
+};
+
 const makeCalc = (operator, arg1, arg2) => (message) => {
     switch (message) {
         case 'getOperator':
@@ -102,7 +112,7 @@ const getCorrectAnswer = (game, data) => {
             }
             break;
         case 'gcd':
-            //
+            return findGCD(getArg1(data), getArg2(data)).toString();
     }
 };
 
