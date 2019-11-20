@@ -1,4 +1,9 @@
-##
+## brain-even demo
+
+[![asciicast](https://asciinema.org/a/282511.svg)](https://asciinema.org/a/282511)
+
+## brain-calc demo
+
 [![asciicast](https://asciinema.org/a/282509.svg)](https://asciinema.org/a/282509)
 
 # brain-games
