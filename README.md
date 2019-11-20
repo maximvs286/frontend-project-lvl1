@@ -1,5 +1,5 @@
 ##
-[![asciicast](https://asciinema.org/a/2H6NpCD7Xgrr8rH8DvMGwpvET.svg)](https://asciinema.org/a/2H6NpCD7Xgrr8rH8DvMGwpvET)
+[![asciicast](https://asciinema.org/a/282509.svg)](https://asciinema.org/a/282509)
 
 # brain-games
 
