@@ -12,6 +12,10 @@ export const greeting = (game) => {
             console.log('\nWelcome to the Brain Games!');
             console.log('What is the result of the expression?\n');
             break;
+        case 'gcd':
+            console.log('\nWelcome to the Brain Games!');
+            console.log('Find the greatest common divisor of given numbers.\n');
+            break;
         default:
             console.log('\nWelcome to the Brain Games!');
             break;
