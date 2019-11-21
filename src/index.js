@@ -16,6 +16,10 @@ export const greeting = (game) => {
             console.log('\nWelcome to the Brain Games!');
             console.log('Find the greatest common divisor of given numbers.\n');
             break;
+        case 'progression':
+            console.log('\nWelcome to the Brain Games!');
+            console.log('What number is missing in the progression?\n');
+            break;
         default:
             console.log('\nWelcome to the Brain Games!');
             break;
@@ -38,6 +42,7 @@ const randomInteger = (max) => {
     return Math.floor(Math.random() * max) + 1;
 };
 */
+
 const randomOperator = (num) => {
     switch (num) {
         case 1:
@@ -59,6 +64,13 @@ const findGCD = (arg1, arg2) => {
     return findCycle(min);
 };
 
+const buildProgString = (data, acc, count) => {
+    if (count > 9) return acc;
+    if (count === getProgHidden(data)) acc += '.. ';
+    else acc += `${getProgStart(data) + (getProgIncement(data) * count)} `;
+    return buildProgString(data, acc, count + 1);
+}; 
+
 const makeCalc = (operator, arg1, arg2) => (message) => {
     switch (message) {
         case 'getOperator':
@@ -78,10 +90,24 @@ const makeGCD = (arg1, arg2) => (message) => {
             return arg2;
     }
 };
+
+const makeProgression = (progStart, progIncrement, progHidden) => (message) => {
+    switch (message) {
+        case 'getProgStart':
+            return progStart;
+        case 'getProgIncrement':
+            return progIncrement;
+        case 'getProgHidden':
+            return progHidden;
+    }
+};
   
 const getOperator = (calc) => calc('getOperator');
 const getArg1 = (data) => data('getArg1');
 const getArg2 = (data) => data('getArg2');
+const getProgStart = (data) => data('getProgStart');
+const getProgIncement = (data) => data('getProgIncrement');
+const getProgHidden = (data) => data('getProgHidden');
 
 const generateData = (game) => {
     switch (game) {
@@ -91,6 +117,8 @@ const generateData = (game) => {
             return makeCalc(randomOperator(randomInteger(1, 3)), randomInteger(1, 10), randomInteger(1, 10));
         case 'gcd':
             return makeGCD(randomInteger(1, 10), randomInteger(1, 10));
+        case 'progression':
+            return makeProgression(randomInteger(1, 99), randomInteger(1, 10), randomInteger(0, 9));
     }
 };
 
@@ -111,6 +139,8 @@ const getCorrectAnswer = (game, data) => {
             break;
         case 'gcd':
             return findGCD(getArg1(data), getArg2(data)).toString();
+        case 'progression':
+            return (getProgHidden(data) * getProgIncement(data) + getProgStart(data)).toString();
     }
 };
 
@@ -122,6 +152,8 @@ const dataToSring = (game, data) => {
             return `${getArg1(data)} ${getOperator(data)} ${getArg2(data)}`;
         case 'gcd':
             return `${getArg1(data)} ${getArg2(data)}`;
+        case 'progression':
+            return buildProgString(data, '', 0);
     }
 };
 
