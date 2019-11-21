@@ -27,19 +27,17 @@ export const askUserName = () => {
     console.log('Hello, ' + userName + '!\n');
 };
 
-/*
 const randomInteger = (min, max) => {
     const rand = min - 0.5 + Math.random() * (max - min + 1);
     return Math.round(rand);
 };
-*/
 
+/*
 const randomInteger = (max) => {
     
     return Math.floor(Math.random() * max) + 1;
 };
-
-
+*/
 const randomOperator = (num) => {
     switch (num) {
         case 1:
@@ -88,11 +86,11 @@ const getArg2 = (data) => data('getArg2');
 const generateData = (game) => {
     switch (game) {
         case 'even':
-            return randomInteger(99);
+            return randomInteger(1, 99);
         case 'calc':
-            return makeCalc(randomOperator(randomInteger(3)), randomInteger(10), randomInteger(10));
+            return makeCalc(randomOperator(randomInteger(1, 3)), randomInteger(1, 10), randomInteger(1, 10));
         case 'gcd':
-            return makeGCD(randomInteger(10), randomInteger(10));
+            return makeGCD(randomInteger(1, 10), randomInteger(1, 10));
     }
 };
 
