@@ -20,6 +20,10 @@ export const greeting = (game) => {
             console.log('\nWelcome to the Brain Games!');
             console.log('What number is missing in the progression?\n');
             break;
+        case 'prime':
+            console.log('\nWelcome to the Brain Games!');
+            console.log('Answer "yes" if given number is prime. Otherwise answer "no".\n');
+            break;
         default:
             console.log('\nWelcome to the Brain Games!');
             break;
@@ -31,17 +35,12 @@ export const askUserName = () => {
     console.log('Hello, ' + userName + '!\n');
 };
 
+//---------- help functions ----------
+
 const randomInteger = (min, max) => {
     const rand = min - 0.5 + Math.random() * (max - min + 1);
     return Math.round(rand);
 };
-
-/*
-const randomInteger = (max) => {
-    
-    return Math.floor(Math.random() * max) + 1;
-};
-*/
 
 const randomOperator = (num) => {
     switch (num) {
@@ -69,7 +68,59 @@ const buildProgString = (data, acc, count) => {
     if (count === getProgHidden(data)) acc += '.. ';
     else acc += `${getProgStart(data) + (getProgIncement(data) * count)} `;
     return buildProgString(data, acc, count + 1);
-}; 
+};
+
+const getCorrectAnswer = (game, data) => {
+    switch (game) {
+        case 'even':
+            if (data % 2 === 0) return 'yes';
+            return 'no';
+        case 'calc':
+            switch (getOperator(data)) {
+                case '-':
+                    return (getArg1(data) - getArg2(data)).toString();
+                case '+':
+                    return (getArg1(data) + getArg2(data)).toString();
+                case '*':
+                    return (getArg1(data) * getArg2(data)).toString();
+            }
+            break;
+        case 'gcd':
+            return findGCD(getArg1(data), getArg2(data)).toString();
+        case 'progression':
+            return (getProgHidden(data) * getProgIncement(data) + getProgStart(data)).toString();
+        case 'prime':
+            return isPrime(data, 2);
+    }
+};
+
+const dataToSring = (game, data) => {
+    switch (game) {
+        case 'even':
+            return `${data}`;
+        case 'calc':
+            return `${getArg1(data)} ${getOperator(data)} ${getArg2(data)}`;
+        case 'gcd':
+            return `${getArg1(data)} ${getArg2(data)}`;
+        case 'progression':
+            return buildProgString(data, '', 0);
+        case 'prime':
+            return `${data}`;
+    }
+};
+
+const isPrime = (num, count) => {
+    if (count === num) return 'yes';
+    if (num % count === 0) return 'no';
+    return isPrime(num, count + 1);
+};
+
+const isCorrect = (correctAnswer, userAnswer) => {
+    if (correctAnswer === userAnswer) return true;
+    return false;
+};
+
+//---------- make data ----------
 
 const makeCalc = (operator, arg1, arg2) => (message) => {
     switch (message) {
@@ -101,13 +152,17 @@ const makeProgression = (progStart, progIncrement, progHidden) => (message) => {
             return progHidden;
     }
 };
-  
+
+//---------- constructors ----------
+
 const getOperator = (calc) => calc('getOperator');
 const getArg1 = (data) => data('getArg1');
 const getArg2 = (data) => data('getArg2');
 const getProgStart = (data) => data('getProgStart');
 const getProgIncement = (data) => data('getProgIncrement');
 const getProgHidden = (data) => data('getProgHidden');
+
+//---------- game data generator ----------
 
 const generateData = (game) => {
     switch (game) {
@@ -119,49 +174,12 @@ const generateData = (game) => {
             return makeGCD(randomInteger(1, 10), randomInteger(1, 10));
         case 'progression':
             return makeProgression(randomInteger(1, 99), randomInteger(1, 10), randomInteger(0, 9));
+        case 'prime':
+            return randomInteger(1, 99);
     }
 };
 
-const getCorrectAnswer = (game, data) => {
-    switch (game) {
-        case 'even':
-            if (data % 2 === 0) return 'yes';
-            return 'no';
-        case 'calc':
-            switch (getOperator(data)) {
-                case '-':
-                    return (getArg1(data) - getArg2(data)).toString();
-                case '+':
-                    return (getArg1(data) + getArg2(data)).toString();
-                case '*':
-                    return (getArg1(data) * getArg2(data)).toString();
-            }
-            break;
-        case 'gcd':
-            return findGCD(getArg1(data), getArg2(data)).toString();
-        case 'progression':
-            return (getProgHidden(data) * getProgIncement(data) + getProgStart(data)).toString();
-    }
-};
-
-const dataToSring = (game, data) => {
-    switch (game) {
-        case 'even':
-            return `${data}`;
-        case 'calc':
-            return `${getArg1(data)} ${getOperator(data)} ${getArg2(data)}`;
-        case 'gcd':
-            return `${getArg1(data)} ${getArg2(data)}`;
-        case 'progression':
-            return buildProgString(data, '', 0);
-    }
-};
-
-const isCorrect = (correctAnswer, userAnswer) => {
-    if (correctAnswer === userAnswer) return true;
-    return false;
-};
-
+//---------- main game cycle ---------
 
 export const askQ = (game, acc) => {
     if (acc === 3) return console.log(`Congratulations, ${userName}!\n`);
