@@ -6,20 +6,20 @@
 
 ## brain-even demo
 
-[![asciicast](https://asciinema.org/a/282511.svg)](https://asciinema.org/a/282511)
+[![asciicast](https://asciinema.org/a/283478.svg)](https://asciinema.org/a/283478)
 
 ## brain-calc demo
 
-[![asciicast](https://asciinema.org/a/282509.svg)](https://asciinema.org/a/282509)
+[![asciicast](https://asciinema.org/a/283481.svg)](https://asciinema.org/a/283481)
 
 ## brain-gcd demo
 
-[![asciicast](https://asciinema.org/a/282617.svg)](https://asciinema.org/a/282617)
+[![asciicast](https://asciinema.org/a/283484.svg)](https://asciinema.org/a/283484)
 
 ## brain-progression demo
 
-[![asciicast](https://asciinema.org/a/282966.svg)](https://asciinema.org/a/282966)
+[![asciicast](https://asciinema.org/a/283487.svg)](https://asciinema.org/a/283487)
 
 ## brain-prime demo
 
-[![asciicast](https://asciinema.org/a/282981.svg)](https://asciinema.org/a/282981)
+[![asciicast](https://asciinema.org/a/283489.svg)](https://asciinema.org/a/283489)
