@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import { askUserName, mainGame, greeting } from '../index';
+import { askUserName, mainGame, greeting } from '../../index';
 
-const game = 'prime';
+const game = 'gcd';
 const gameAcc = 0;
 
 greeting(game);
