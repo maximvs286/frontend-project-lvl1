@@ -56,7 +56,8 @@ const randomOperator = (num) => {
 const findGCD = (arg1, arg2) => {
     const min = (arg1 <= arg2) ? arg1 : arg2;
     const findCycle = (min) => {
-        if (min < 2 ) return 1;
+        const minEvenDivisor = 2;
+        if (min < minEvenDivisor ) return 1;
         if (arg1 % min === 0 && arg2 % min === 0) return min;
         return findCycle(min - 1);
     };
@@ -64,7 +65,8 @@ const findGCD = (arg1, arg2) => {
 };
 
 const buildProgString = (data, acc, count) => {
-    if (count > 9) return acc;
+    const maxProgMember = 9;
+    if (count > maxProgMember) return acc;
     if (count === getProgHidden(data)) acc += '.. ';
     else acc += `${getProgStart(data) + (getProgIncement(data) * count)} `;
     return buildProgString(data, acc, count + 1);
