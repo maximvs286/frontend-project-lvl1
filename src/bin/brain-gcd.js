@@ -2,8 +2,11 @@
 
 import { askUserName, askQ, greeting } from '../index';
 
-greeting('gcd');
+const game = 'gcd';
+const gameAcc = 0;
 
-askUserName();
+greeting(game);
 
-askQ('gcd', 0);
+const userName = askUserName();
+
+askQ(game, userName, gameAcc);

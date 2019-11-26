@@ -1,7 +1,5 @@
 import readlineSync from 'readline-sync';
 
-let userName = '';
-
 export const greeting = (game) => {
     switch (game) {
         case 'even':
@@ -31,8 +29,9 @@ export const greeting = (game) => {
 };
 
 export const askUserName = () => {
-    userName = readlineSync.question('May I have your name? ');
+    const userName = readlineSync.question('May I have your name? ');
     console.log('Hello, ' + userName + '!\n');
+    return userName;
 };
 
 //---------- help functions ----------
@@ -183,8 +182,11 @@ const generateData = (game) => {
 
 //---------- main game cycle ---------
 
-export const askQ = (game, acc) => {
-    if (acc === 3) return console.log(`Congratulations, ${userName}!\n`);
+export const askQ = (game, userName, gameAcc) => {
+    const resetAcc = 0;
+    const correctToEnd = 3;
+
+    if (gameAcc === correctToEnd) return console.log(`Congratulations, ${userName}!\n`);
     
     const data = generateData(game);
     
@@ -195,8 +197,8 @@ export const askQ = (game, acc) => {
     const testAnswer = isCorrect(correctAnswer, userAnswer);
     if (testAnswer === true) {
         console.log('Correct!');
-        return askQ(game, acc + 1);
+        return askQ(game, userName, gameAcc + 1);
     }
     console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!\n`);
-    return askQ(game, 0);
+    return askQ(game, userName, resetAcc);
 };

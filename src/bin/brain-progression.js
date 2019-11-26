@@ -2,8 +2,11 @@
 
 import { askUserName, askQ, greeting } from '../index';
 
-greeting('progression');
+const game = 'progression';
+let gameAcc = 0;
 
-askUserName();
+greeting(game);
 
-askQ('progression', 0);
+const userName = askUserName();
+
+askQ(game, userName, gameAcc);
