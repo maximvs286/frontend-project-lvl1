@@ -2,7 +2,14 @@
   "name": "maximvs-frontend-project-lvl1",
   "version": "1.0.0",
   "description": "Simple test games",
-  "keywords": ["brain-games", "even", "calc", "gcd", "progression", "prime"],
+  "keywords": [
+    "brain-games",
+    "even",
+    "calc",
+    "gcd",
+    "progression",
+    "prime"
+  ],
   "main": "",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
