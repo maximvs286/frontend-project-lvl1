@@ -1,4 +1,4 @@
-import { randomInteger, greeting, makeGameData, enterUserName, mainGame } from '../../index';
+import { randomInteger, greeting, makeGameData, enterUserName, mainGame } from '../index';
 
 export const startGame = () => {
     const rules = 'What number is missing in the progression?\n';

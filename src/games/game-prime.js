@@ -1,4 +1,4 @@
-import { randomInteger, greeting, makeGameData, enterUserName, mainGame } from '../../index';
+import { randomInteger, greeting, makeGameData, enterUserName, mainGame } from '../index';
 
 export const startGame = () => {
     const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
