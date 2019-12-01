@@ -2,9 +2,13 @@ import { randomInteger, greeting, makeGameData, enterUserName, mainGame } from '
 
 export const startGame = () => {
     const rules = 'What is the result of the expression?\n';
-    greeting(rules);
+
+    greeting(rules); // show greeting with rules
+
     const userName = enterUserName();
-    const gameGenerator = () => {
+    
+    const gameGenerator = () => { // game data generator
+        //----------
         const randomOperatorStr = (randomNum) => {
             switch (randomNum) {
                 case 1:
@@ -34,7 +38,8 @@ export const startGame = () => {
         };
         const correctAnswerStr = calcAnswer(operatorStr, calcArg1, calcArg2);
         const questionStr = `${calcArg1} ${operatorStr} ${calcArg2}`;
-        return makeGameData(questionStr, correctAnswerStr);
+        //----------
+        return makeGameData(questionStr, correctAnswerStr); // game structure for engine
     };
-    mainGame(userName, gameGenerator);
+    mainGame(userName, gameGenerator); // call main game cycle
 };

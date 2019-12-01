@@ -2,9 +2,13 @@ import { randomInteger, greeting, makeGameData, enterUserName, mainGame } from '
 
 export const startGame = () => {
     const rules = 'What number is missing in the progression?\n';
-    greeting(rules);
+
+    greeting(rules); // show greeting with rules
+
     const userName = enterUserName();
-    const gameGenerator = () => {
+
+    const gameGenerator = () => { // game data generator
+        //----------
         const progStartMin = 1;
         const progStartMax = 90;
         const progIncrementMin = 1;
@@ -25,7 +29,8 @@ export const startGame = () => {
         const startString = '';
         const startAcc = 0;
         const questionStr = buildProgString(startString, startAcc);
-        return makeGameData(questionStr, correctAnswerStr);
+        //----------
+        return makeGameData(questionStr, correctAnswerStr); // game structure for engine
     };
     mainGame(userName, gameGenerator);
 };

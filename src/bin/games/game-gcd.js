@@ -2,9 +2,13 @@ import { randomInteger, greeting, makeGameData, enterUserName, mainGame } from '
 
 export const startGame = () => {
     const rules = 'Find the greatest common divisor of given numbers.\n';
-    greeting(rules);
+
+    greeting(rules); // show greeting with rules
+
     const userName = enterUserName();
-    const gameGenerator = () => {
+    
+    const gameGenerator = () => { // game data generator
+        //----------
         const gcdMin = 1;
         const gcdMax = 10; // '10' for easy mind calc
         const gcdArg1 = randomInteger(gcdMin, gcdMax);
@@ -21,7 +25,8 @@ export const startGame = () => {
         };
         const correctAnswerStr = calcGCD(gcdArg1, gcdArg2).toString();
         const questionStr = `${gcdArg1} ${gcdArg2}`;
-        return makeGameData(questionStr, correctAnswerStr);
+        //----------
+        return makeGameData(questionStr, correctAnswerStr); // game structure for engine
     };
     mainGame(userName, gameGenerator);
 };
