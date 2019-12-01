@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { askUserName, mainGame, greeting } from '../../index';
+import { askUserName, mainGame, greeting } from '../index';
 
 const game = 'even';
 const gameAcc = 0;
