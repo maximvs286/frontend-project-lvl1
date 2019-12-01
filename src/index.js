@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-//---------- randomize funcrion ----------
+//---------- randomize function ----------
 
 export const randomInteger = (min, max) => {
     const rand = min - 0.5 + Math.random() * (max - min + 1);
