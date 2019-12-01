@@ -1,12 +1,5 @@
 #!/usr/bin/env node
 
-import { askUserName, mainGame, greeting } from '../index';
+import { startGame } from './games/game-prime';
 
-const game = 'prime';
-const gameAcc = 0;
-
-greeting(game);
-
-const userName = askUserName();
-
-mainGame(game, userName, gameAcc);
+startGame();
