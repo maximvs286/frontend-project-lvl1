@@ -1,3 +1,5 @@
+
+/*
 import readlineSync from 'readline-sync';
 
 //---------- start functions ----------
@@ -230,3 +232,4 @@ export const mainGame = (game, userName, gameAcc) => {
     console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!\n`);
     return mainGame(game, userName, resetAcc);
 };
+*/
