@@ -43,7 +43,7 @@ export const mainGame = (rulesStr, gameGenerator) => {
             console.log('Correct!');
             return mainGameIter(gameAcc + 1);
         }
-        console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswerStr}'\nLet's try again, ${userName}!\n`);
+        console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswerStr}'.\nLet's try again, ${userName}!\n`);
         return mainGameIter(resetAcc);
     };
     mainGameIter(gameAcc);
