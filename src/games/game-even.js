@@ -1,6 +1,6 @@
 import { randomInteger, makeGameData, mainGame } from '../index';
 
-const rules = 'Answer "yes" if the number is even, otherwise answer "no".\n';
+const rulesStr = 'Answer "yes" if the number is even, otherwise answer "no".\n';
 
 const isEven = (num) => {
     return num % 2 === 0 ? true : false;
@@ -19,5 +19,5 @@ const gameGenerator = () => { // game data generator
 };
 
 export const startGame = () => {
-    mainGame(rules, gameGenerator); // call main game cycle
+    mainGame(rulesStr, gameGenerator); // call main game cycle
 };

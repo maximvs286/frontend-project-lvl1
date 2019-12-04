@@ -26,8 +26,8 @@ const getCorrectAnswerStr = (gameData) => gameData('getCorrectAnswerStr');
 
 //---------- main cycle ----------
 
-export const mainGame = (rules, gameGenerator) => {
-    console.log(`\nWelcome to the Brain Games!\n${rules}`); // greeting function
+export const mainGame = (rulesStr, gameGenerator) => {
+    console.log(`\nWelcome to the Brain Games!\n${rulesStr}`); // greeting function
     const userName = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${userName}!\n`);
     const gameAcc = 0;
