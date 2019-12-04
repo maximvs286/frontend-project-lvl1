@@ -7,20 +7,6 @@ export const randomInteger = (min, max) => {
     return Math.round(rand);
 };
 
-//---------- greeting function ----------
-
-export const greeting = (rules) => {
-    console.log(`\nWelcome to the Brain Games!\n${rules}`);
-};
-
-//---------- capture user name ----------
-
-export const enterUserName = () => {
-    const userName = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${userName}!\n`);
-    return userName;
-};
-
 //---------- structure for randomize function ----------
 
 export const makeGameData = (questionStr, correctAnswerStr) => (message) => {
@@ -40,7 +26,10 @@ const getCorrectAnswerStr = (gameData) => gameData('getCorrectAnswerStr');
 
 //---------- main cycle ----------
 
-export const mainGame = (userName, gameGenerator) => {
+export const mainGame = (rules, gameGenerator) => {
+    console.log(`\nWelcome to the Brain Games!\n${rules}`); // greeting function
+    const userName = readlineSync.question('May I have your name? ');
+    console.log(`Hello, ${userName}!\n`);
     const gameAcc = 0;
     const correctToEnd = 3;
     const mainGameIter = (gameAcc) => {
