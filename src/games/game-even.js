@@ -1,12 +1,18 @@
 import { randomInteger, makeGameData, mainGame } from '../index';
 
+// rules string const
+
 const rulesStr = 'Answer "yes" if the number is even, otherwise answer "no".\n';
+
+// check even odd
 
 const isEven = (num) => {
     return num % 2 === 0 ? true : false;
 };
 
-const gameGenerator = () => { // game data generator
+// generate game data
+
+const gameGenerator = () => { 
     const min = 1;
     const max = 99;
 
@@ -15,9 +21,11 @@ const gameGenerator = () => { // game data generator
     const questionStr = question.toString();
     const correctAnswerStr = isEven(question) ? 'yes' : 'no';
     
-    return makeGameData(questionStr, correctAnswerStr); // game structure for engine
+    return makeGameData(questionStr, correctAnswerStr);
 };
 
+// game start
+
 export const startGame = () => {
-    mainGame(rulesStr, gameGenerator); // call main game cycle
+    mainGame(rulesStr, gameGenerator);
 };
