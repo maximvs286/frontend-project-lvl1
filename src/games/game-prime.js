@@ -2,7 +2,7 @@ import { randomInteger, makeGameData, mainGame } from '../index';
 
 // rules string const
 
-const rulesStr = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
+const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
 
 // find an answer
 
@@ -29,5 +29,5 @@ const gameGenerator = () => {
 // game start
 
 export const startGame = () => {
-    mainGame(rulesStr, gameGenerator);
+    mainGame(gameTask, gameGenerator);
 };
