@@ -18,7 +18,7 @@ const gererateGameData = () => {
 
     const question = randomInteger(min, max);
     
-    const questionStr = question.toString();
+    const questionStr = question;
     const correctAnswerStr = isEven(question) ? 'yes' : 'no';
     
     return makeGameData(questionStr, correctAnswerStr);
