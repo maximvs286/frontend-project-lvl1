@@ -2,7 +2,7 @@ import { randomInteger, makeGameData, mainGame } from '../index';
 
 // rules string const
 
-const rulesStr = 'What number is missing in the progression?\n';
+const gameTask = 'What number is missing in the progression?\n';
 
 // calc a prog element
 
@@ -41,5 +41,5 @@ const gameGenerator = () => {
 // game start
 
 export const startGame = () => {
-    mainGame(rulesStr, gameGenerator);
+    mainGame(gameTask, gameGenerator);
 };
