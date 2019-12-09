@@ -7,7 +7,7 @@ const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 // check even odd
 
 const isEven = (num) => {
-    return num % 2 === 0 ? true : false;
+    return num % 2 === 0 ? 'yes' : 'no';
 };
 
 // generate game data
@@ -18,7 +18,7 @@ const gererateGameData = () => {
 
     const question = randomInteger(min, max);
     
-    const correctAnswer = isEven(question) ? 'yes' : 'no';
+    const correctAnswer = isEven(question);
     
     return makeGameData(question, correctAnswer);
 };
