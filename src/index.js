@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getQuestion, getCorrectAnswer } from './finction-lib'
+import { getQuestion, getCorrectAnswer } from './finctions-';
 
 //---------- main cycle ----------
 
