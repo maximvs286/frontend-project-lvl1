@@ -43,6 +43,8 @@ const gererateGameData = () => {
 
 // game start
 
-export const startGame = () => {
+const startGame = () => {
     mainGame(gameTask, gererateGameData);
 };
+
+export default startGame;
