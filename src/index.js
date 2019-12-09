@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import { getQuestion, getCorrectAnswer } from './finction-lib';
 
+const correctToEnd = 3; // correct game iterrations number
+
 //---------- main cycle ----------
 
 const mainGame = (gameTask, gererateGameData) => {
@@ -8,7 +10,6 @@ const mainGame = (gameTask, gererateGameData) => {
     const userName = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${userName}!\n`);
     const gameAcc = 0;
-    const correctToEnd = 3;
 
     const mainGameIter = (gameAcc) => {
         if (gameAcc === correctToEnd) return console.log(`Congratulations, ${userName}!\n`);
