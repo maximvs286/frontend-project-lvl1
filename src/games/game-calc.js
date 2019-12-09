@@ -10,19 +10,19 @@ const operations = '-+*';
 
 const randomOperator = (operations) => {
     const startPos = 0;
-    return operations[randomInteger(startPos, operations.length)];
+    return operations[randomInteger(startPos, operations.length - 1)];
 };
 
 // find an answer
 
-const calcAnswerStr = (operatorStr, calcArg1, calcArg2) => {
+const calcAnswer = (operatorStr, calcArg1, calcArg2) => {
     switch (operatorStr) {
         case '-':
-            return (calcArg1 - calcArg2).toString();
+            return calcArg1 - calcArg2;
         case '+':
-            return (calcArg1 + calcArg2).toString();
+            return calcArg1 + calcArg2;
         case '*':
-            return (calcArg1 * calcArg2).toString();
+            return calcArg1 * calcArg2;
     }
 };
 
@@ -36,7 +36,7 @@ const gameGenerator = () => {
     const calcArg2 = randomInteger(calcArgMin, calcArgMax);
 
     const questionStr = `${calcArg1} ${operatorStr} ${calcArg2}`;
-    const correctAnswerStr = calcAnswerStr(operatorStr, calcArg1, calcArg2);
+    const correctAnswerStr = calcAnswer(operatorStr, calcArg1, calcArg2).toString();
     
     return makeGameData(questionStr, correctAnswerStr);
 };
