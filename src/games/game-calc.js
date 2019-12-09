@@ -35,10 +35,10 @@ const gererateGameData = () => {
     const calcArg1 = randomInteger(calcArgMin, calcArgMax);
     const calcArg2 = randomInteger(calcArgMin, calcArgMax);
 
-    const questionStr = `${calcArg1} ${operatorStr} ${calcArg2}`;
-    const correctAnswerStr = calcAnswer(operatorStr, calcArg1, calcArg2).toString();
+    const question = `${calcArg1} ${operatorStr} ${calcArg2}`;
+    const correctAnswer = calcAnswer(operatorStr, calcArg1, calcArg2).toString();
     
-    return makeGameData(questionStr, correctAnswerStr);
+    return makeGameData(question, correctAnswer);
 };
 
 // game start

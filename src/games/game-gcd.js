@@ -25,10 +25,10 @@ const gererateGameData = () => {
     const gcdArg1 = randomInteger(gcdMin, gcdMax);
     const gcdArg2 = randomInteger(gcdMin, gcdMax);
     
-    const correctAnswerStr = calcGCD(gcdArg1, gcdArg2).toString();
-    const questionStr = `${gcdArg1} ${gcdArg2}`;
+    const question = `${gcdArg1} ${gcdArg2}`;
+    const correctAnswer = calcGCD(gcdArg1, gcdArg2).toString();
     
-    return makeGameData(questionStr, correctAnswerStr);
+    return makeGameData(question, correctAnswer);
 };
 
 // game start

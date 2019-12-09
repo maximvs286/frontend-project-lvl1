@@ -17,13 +17,12 @@ const isPrime = (num, count) => {
 const gererateGameData = () => {
     const primeMin = 1;
     const primeMax = 99;
-    const prime = randomInteger(primeMin, primeMax);
+    const primeCandidate = randomInteger(primeMin, primeMax);
     const countStart = 2;
 
-    const questionStr = `${prime}`;
-    const correctAnswerStr = isPrime(prime, countStart) ? 'yes' : 'no';
+    const correctAnswer = isPrime(primeCandidate, countStart) ? 'yes' : 'no';
 
-    return makeGameData(questionStr, correctAnswerStr);
+    return makeGameData(primeCandidate, correctAnswer);
 };
 
 // game start

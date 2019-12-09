@@ -32,10 +32,10 @@ const gererateGameData = () => {
         return buildProgString(acc, count + 1);
     };
 
-    const questionStr = buildProgString(startAcc, startCount);
-    const correctAnswerStr = calcProgElement(progStart, progIncrement, progHidden).toString();
+    const question = buildProgString(startAcc, startCount);
+    const correctAnswer = calcProgElement(progStart, progIncrement, progHidden).toString();
     
-    return makeGameData(questionStr, correctAnswerStr);
+    return makeGameData(question, correctAnswer);
 };
 
 // game start
