@@ -6,11 +6,11 @@ const gameTask = 'What is the result of the expression?\n';
 
 // random operator
 
-const operationList = '-+*';
+const operations = '-+*';
 
-const randomOperatorStr = (operationList) => {
+const randomOperator = (operations) => {
     const startPos = 0;
-    return operationList[randomInteger(startPos, operationList.length)];
+    return operations[randomInteger(startPos, operations.length)];
 };
 
 // find an answer
@@ -31,7 +31,7 @@ const calcAnswerStr = (operatorStr, calcArg1, calcArg2) => {
 const gameGenerator = () => {
     const calcArgMin = 1;
     const calcArgMax = 10; // '10' for easy mind calculate
-    const operatorStr = randomOperatorStr(operationList);
+    const operatorStr = randomOperator(operations);
     const calcArg1 = randomInteger(calcArgMin, calcArgMax);
     const calcArg2 = randomInteger(calcArgMin, calcArgMax);
 
