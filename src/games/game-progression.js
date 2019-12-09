@@ -11,29 +11,29 @@ const calcProgElement = (progStart, progIncrement, progPosition) => progIncremen
 // generate game data
 
 const gererateGameData = () => {
-    const progStartMin = 1;
-    const progStartMax = 90;
-    const progIncrementMin = 1;
-    const progIncrementMax = 10;
-    const progHiddenMin = 0;
-    const progHiddenMax = 9;
-    const progStart = randomInteger(progStartMin, progStartMax);
-    const progIncrement = randomInteger(progIncrementMin, progIncrementMax);
-    const progHidden = randomInteger(progHiddenMin, progHiddenMax);
+    const progressionStartMinValue = 1;
+    const progressionStartMaxValue = 90;
+    const progressionIncrementMinValue = 1;
+    const progressionIncrementMaxValue = 10;
+    const progressionHiddenMinValue = 0;
+    const progressionHiddenMaxValue = 9;
+    const progressionStart = randomInteger(progressionStartMinValue, progressionStartMaxValue);
+    const progressionIncrement = randomInteger(progressionIncrementMinValue, progressionIncrementMaxValue);
+    const progressionHidden = randomInteger(progressionHiddenMinValue, progressionHiddenMaxValue);
     
     const startAcc = '';
     const startCount = 0;
 
     const buildProgString = (acc, count) => {
-        const maxProgMember = 9;
-        if (count > maxProgMember) return acc;
-        if (count === progHidden) acc += '.. ';
-        else acc += `${calcProgElement(progStart, progIncrement, count)} `;
+        const maxProgressionMember = 9;
+        if (count > maxProgressionMember) return acc;
+        if (count === progressionHidden) acc += '.. ';
+        else acc += `${calcProgElement(progressionStart, progressionIncrement, count)} `;
         return buildProgString(acc, count + 1);
     };
 
     const question = buildProgString(startAcc, startCount);
-    const correctAnswer = calcProgElement(progStart, progIncrement, progHidden).toString();
+    const correctAnswer = calcProgElement(progressionStart, progressionIncrement, progressionHidden).toString();
     
     return makeGameData(question, correctAnswer);
 };
