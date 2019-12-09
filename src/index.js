@@ -9,20 +9,20 @@ export const randomInteger = (min, max) => {
 
 //---------- structure for randomize function ----------
 
-export const makeGameData = (questionStr, correctAnswerStr) => (message) => {
+export const makeGameData = (question, correctAnswer) => (message) => {
     switch (message) {
-        case 'getQuestionStr':
-            return questionStr;
-        case 'getCorrectAnswerStr':
-            return correctAnswerStr;
+        case 'getQuestion':
+            return question;
+        case 'getCorrectAnswer':
+            return correctAnswer;
     }
 };
 
 //---------- getters ----------
 
-const getQuestionStr = (gameData) => gameData('getQuestionStr');
+const getQuestion = (gameData) => gameData('getQuestion');
 
-const getCorrectAnswerStr = (gameData) => gameData('getCorrectAnswerStr');
+const getCorrectAnswer = (gameData) => gameData('getCorrectAnswer');
 
 //---------- main cycle ----------
 
@@ -32,19 +32,21 @@ export const mainGame = (rulesStr, gameGenerator) => {
     console.log(`Hello, ${userName}!\n`);
     const gameAcc = 0;
     const correctToEnd = 3;
+
     const mainGameIter = (gameAcc) => {
         if (gameAcc === correctToEnd) return console.log(`Congratulations, ${userName}!\n`);
         const resetAcc = 0;
         const data = gameGenerator();
-        const questionStr = getQuestionStr(data);
-        const correctAnswerStr = getCorrectAnswerStr(data);
-        const userAnswer = readlineSync.question(`Question: ${questionStr}\nYour answer: `);
-        if (correctAnswerStr === userAnswer) {
+        const question = getQuestion(data);
+        const correctAnswer = getCorrectAnswer(data);
+        const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
+        if (correctAnswer === userAnswer) {
             console.log('Correct!');
             return mainGameIter(gameAcc + 1);
         }
-        console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswerStr}'.\nLet's try again, ${userName}!\n`);
+        console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!\n`);
         return mainGameIter(resetAcc);
     };
+    
     mainGameIter(gameAcc);
 };
