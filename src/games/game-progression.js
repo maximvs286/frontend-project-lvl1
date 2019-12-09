@@ -21,8 +21,8 @@ const gameGenerator = () => {
     const progIncrement = randomInteger(progIncrementMin, progIncrementMax);
     const progHidden = randomInteger(progHiddenMin, progHiddenMax);
     
-    const startString = '';
-    const startAcc = 0;
+    const startAcc = '';
+    const startCount = 0;
 
     const buildProgString = (acc, count) => {
         const maxProgMember = 9;
@@ -32,7 +32,7 @@ const gameGenerator = () => {
         return buildProgString(acc, count + 1);
     };
 
-    const questionStr = buildProgString(startString, startAcc);
+    const questionStr = buildProgString(startAcc, startCount);
     const correctAnswerStr = calcProgElement(progStart, progIncrement, progHidden).toString();
     
     return makeGameData(questionStr, correctAnswerStr);
