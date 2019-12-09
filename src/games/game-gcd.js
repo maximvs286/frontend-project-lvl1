@@ -9,11 +9,12 @@ const gameTask = 'Find the greatest common divisor of given numbers.';
 
 const calcGCD = (arg1, arg2) => {
     const min = (arg1 <= arg2) ? arg1 : arg2;
-    const findingCycle = (min) => {
+    const findingCycle = (number) => {
         const minEvenDivisor = 2;
-        if (min < minEvenDivisor) return 1;
-        if (arg1 % min === 0 && arg2 % min === 0) return min;
-        return findingCycle(min - 1);
+        const minGCDEver = 1;
+        if (min < minEvenDivisor) return minGCDEver;
+        if (arg1 % number === 0 && arg2 % number === 0) return number;
+        return findingCycle(number - 1);
     };
     return findingCycle(min);
 };
