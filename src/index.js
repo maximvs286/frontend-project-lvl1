@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
-import { getQuestion, getCorrectAnswer } from './finctions-';
+import { getQuestion, getCorrectAnswer } from './finction-lib';
 
 //---------- main cycle ----------
 
-export const mainGame = (gameTask, gererateGameData) => {
+const mainGame = (gameTask, gererateGameData) => {
     console.log(`\nWelcome to the Brain Games!\n${gameTask}\n`); // greeting function
     const userName = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${userName}!\n`);
@@ -27,3 +27,5 @@ export const mainGame = (gameTask, gererateGameData) => {
     
     mainGameIter(gameAcc);
 };
+
+export default mainGame;
