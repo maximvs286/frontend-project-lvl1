@@ -6,7 +6,7 @@ const gameTask = 'What number is missing in the progression?';
 
 // calc a prog element
 
-const calcProgElement = (progStart, progIncrement, progPosition) => progIncrement * progPosition + progStart;
+const calcProgressionElement = (progStart, progIncrement, progPosition) => progIncrement * progPosition + progStart;
 
 // generate game data
 
@@ -24,16 +24,16 @@ const gererateGameData = () => {
     const startAcc = '';
     const startCount = 0;
 
-    const buildProgString = (acc, count) => {
+    const buildProgressionString = (acc, count) => {
         const maxProgressionMember = 9;
         if (count > maxProgressionMember) return acc;
-        if (count === progressionHidden) acc += '.. ';
-        else acc += `${calcProgElement(progressionStart, progressionIncrement, count)} `;
-        return buildProgString(acc, count + 1);
+        if (count === progressionHidden) acc = `${acc} ..`;
+        else acc = `${acc} ${calcProgressionElement(progressionStart, progressionIncrement, count)}`;
+        return buildProgressionString(acc, count + 1);
     };
 
-    const question = buildProgString(startAcc, startCount);
-    const correctAnswer = calcProgElement(progressionStart, progressionIncrement, progressionHidden).toString();
+    const question = buildProgressionString(startAcc, startCount);
+    const correctAnswer = calcProgressionElement(progressionStart, progressionIncrement, progressionHidden).toString();
     
     return makeGameData(question, correctAnswer);
 };
