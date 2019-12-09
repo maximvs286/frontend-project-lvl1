@@ -28,7 +28,7 @@ const calcAnswer = (operatorStr, calcArg1, calcArg2) => {
 
 // generate game data
 
-const gameGenerator = () => {
+const gererateGameData = () => {
     const calcArgMin = 1;
     const calcArgMax = 10; // '10' for easy mind calculate
     const operatorStr = randomOperator(operations);
@@ -44,5 +44,5 @@ const gameGenerator = () => {
 // game start
 
 export const startGame = () => {
-    mainGame(gameTask, gameGenerator);
+    mainGame(gameTask, gererateGameData);
 };

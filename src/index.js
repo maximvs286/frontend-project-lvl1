@@ -26,7 +26,7 @@ const getCorrectAnswer = (gameData) => gameData('getCorrectAnswer');
 
 //---------- main cycle ----------
 
-export const mainGame = (rulesStr, gameGenerator) => {
+export const mainGame = (rulesStr, gererateGameData) => {
     console.log(`\nWelcome to the Brain Games!\n${rulesStr}`); // greeting function
     const userName = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${userName}!\n`);
@@ -36,7 +36,7 @@ export const mainGame = (rulesStr, gameGenerator) => {
     const mainGameIter = (gameAcc) => {
         if (gameAcc === correctToEnd) return console.log(`Congratulations, ${userName}!\n`);
         const resetAcc = 0;
-        const data = gameGenerator();
+        const data = gererateGameData();
         const question = getQuestion(data);
         const correctAnswer = getCorrectAnswer(data);
         const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);

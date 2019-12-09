@@ -10,7 +10,7 @@ const calcProgElement = (progStart, progIncrement, progPosition) => progIncremen
 
 // generate game data
 
-const gameGenerator = () => {
+const gererateGameData = () => {
     const progStartMin = 1;
     const progStartMax = 90;
     const progIncrementMin = 1;
@@ -41,5 +41,5 @@ const gameGenerator = () => {
 // game start
 
 export const startGame = () => {
-    mainGame(gameTask, gameGenerator);
+    mainGame(gameTask, gererateGameData);
 };

@@ -14,7 +14,7 @@ const isPrime = (num, count) => {
 
 // generate game data
 
-const gameGenerator = () => {
+const gererateGameData = () => {
     const primeMin = 1;
     const primeMax = 99;
     const prime = randomInteger(primeMin, primeMax);
@@ -29,5 +29,5 @@ const gameGenerator = () => {
 // game start
 
 export const startGame = () => {
-    mainGame(gameTask, gameGenerator);
+    mainGame(gameTask, gererateGameData);
 };

@@ -12,7 +12,7 @@ const isEven = (num) => {
 
 // generate game data
 
-const gameGenerator = () => { 
+const gererateGameData = () => { 
     const min = 1;
     const max = 99;
 
@@ -27,5 +27,5 @@ const gameGenerator = () => {
 // game start
 
 export const startGame = () => {
-    mainGame(gameTask, gameGenerator);
+    mainGame(gameTask, gererateGameData);
 };

@@ -19,7 +19,7 @@ const calcGCD = (arg1, arg2) => {
 
 // generate game data
 
-const gameGenerator = () => {
+const gererateGameData = () => {
     const gcdMin = 1;
     const gcdMax = 10; // '10' for easy mind calculate
     const gcdArg1 = randomInteger(gcdMin, gcdMax);
@@ -34,5 +34,5 @@ const gameGenerator = () => {
 // game start
 
 export const startGame = () => {
-    mainGame(gameTask, gameGenerator);
+    mainGame(gameTask, gererateGameData);
 };
