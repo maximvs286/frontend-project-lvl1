@@ -2,7 +2,7 @@ import { randomInteger, makeGameData, mainGame } from '../index';
 
 // rules string const
 
-const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".\n';
+const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 // check even odd
 

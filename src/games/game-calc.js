@@ -2,7 +2,7 @@ import { randomInteger, makeGameData, mainGame } from '../index';
 
 // rules string const
 
-const gameTask = 'What is the result of the expression?\n';
+const gameTask = 'What is the result of the expression?';
 
 // random operator
 

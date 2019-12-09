@@ -2,7 +2,7 @@ import { randomInteger, makeGameData, mainGame } from '../index';
 
 // rules string const
 
-const gameTask = 'Find the greatest common divisor of given numbers.\n';
+const gameTask = 'Find the greatest common divisor of given numbers.';
 
 // find an answer
 

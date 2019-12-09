@@ -2,7 +2,7 @@ import { randomInteger, makeGameData, mainGame } from '../index';
 
 // rules string const
 
-const gameTask = 'What number is missing in the progression?\n';
+const gameTask = 'What number is missing in the progression?';
 
 // calc a prog element
 
