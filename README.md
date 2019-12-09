@@ -1,8 +1,7 @@
 # brain-games
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
-[![Build Status](https://travis-ci.org/maximvs286/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/maximvs286/frontend-project-lvl1)
+<a href="https://codeclimate.com/github/maximvs286/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/40d8b13e0c1d58385f97/maintainability" /></a>
+<a href="https://codeclimate.com/github/maximvs286/frontend-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/40d8b13e0c1d58385f97/test_coverage" /></a>
 
 ## brain-even demo
 
