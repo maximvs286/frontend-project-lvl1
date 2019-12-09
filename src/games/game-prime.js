@@ -1,4 +1,5 @@
-import { randomInteger, makeGameData, mainGame } from '../index';
+import mainGame from '../index';
+import { randomInteger, makeGameData } from '../finction-lib';
 
 // rules string const
 
