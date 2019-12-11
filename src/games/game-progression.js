@@ -16,11 +16,11 @@ const gererateGameData = () => {
   const startMaxValue = 90;
   const incrementMinValue = 1;
   const incrementMaxValue = 10;
-  const hiddenMinValue = 0;
-  const hiddenMaxValue = 9;
+  const hiddenMinPosition = 0;
+  const hiddenMaxPosition = 9;
   const startNum = randomInteger(startMinValue, startMaxValue);
   const increment = randomInteger(incrementMinValue, incrementMaxValue);
-  const hidden = randomInteger(hiddenMinValue, hiddenMaxValue);
+  const hidden = randomInteger(hiddenMinPosition, hiddenMaxPosition);
   const startAcc = '';
   const startCount = 0;
 
