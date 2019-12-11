@@ -12,30 +12,28 @@ const calcProgressionElement = (progStart, progIncrement, progPosition) => progI
 // generate game data
 
 const gererateGameData = () => {
-  const progressionStartMinValue = 1;
-  const progressionStartMaxValue = 90;
-  const progressionIncrementMinValue = 1;
-  const progressionIncrementMaxValue = 10;
-  const progressionHiddenMinValue = 0;
-  const progressionHiddenMaxValue = 9;
-  const progressionStart = randomInteger(progressionStartMinValue, progressionStartMaxValue);
-  const progressionIncrement = randomInteger(progressionIncrementMinValue, progressionIncrementMaxValue);
-  const progressionHidden = randomInteger(progressionHiddenMinValue, progressionHiddenMaxValue);
-    
+  const startMinValue = 1;
+  const startMaxValue = 90;
+  const incrementMinValue = 1;
+  const incrementMaxValue = 10;
+  const hiddenMinValue = 0;
+  const hiddenMaxValue = 9;
+  const startNum = randomInteger(startMinValue, startMaxValue);
+  const increment = randomInteger(incrementMinValue, incrementMaxValue);
+  const hidden = randomInteger(hiddenMinValue, hiddenMaxValue);
   const startAcc = '';
   const startCount = 0;
 
   const buildProgressionString = (acc, count) => {
     const maxProgressionMember = 9;
     if (count > maxProgressionMember) return acc;
-    if (count === progressionHidden) acc = `${acc} ..`;
-    else acc = `${acc} ${calcProgressionElement(progressionStart, progressionIncrement, count)}`;
+    if (count === hidden) acc = `${acc} ..`;
+    else acc = `${acc} ${calcProgressionElement(startNum, increment, count)}`;
     return buildProgressionString(acc, count + 1);
   };
-
+  
   const question = buildProgressionString(startAcc, startCount);
-  const correctAnswer = calcProgressionElement(progressionStart, progressionIncrement, progressionHidden).toString();
-    
+  const correctAnswer = calcProgressionElement(startNum, increment, hidden).toString();
   return makeGameData(question, correctAnswer);
 };
 
