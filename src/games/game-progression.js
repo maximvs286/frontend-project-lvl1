@@ -11,11 +11,9 @@ const hiddenMaxPosition = 10;
 const gameTask = 'What number is missing in the progression?';
 
 // calc a prog element
-
 const calcProgressionElement = (startNum, increment, position) => increment * position + startNum;
 
 // generate game data
-
 const gererateGameData = () => {
   const startNum = randomInteger(startMinValue, startMaxValue);
   const increment = randomInteger(incrementMinValue, incrementMaxValue);
@@ -36,7 +34,6 @@ const gererateGameData = () => {
 };
 
 // game start
-
 const startGame = () => {
   mainGame(gameTask, gererateGameData);
 };
