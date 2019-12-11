@@ -1,8 +1,10 @@
 import mainGame from '../index';
 import { randomInteger, makeGameData } from '../finction-lib';
 
-// rules string const
+// definitions
 
+const minMumber = 1;
+const maxNumber = 99;
 const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 // check even odd
@@ -13,14 +15,9 @@ const isEven = (num) => {
 
 // generate game data
 
-const gererateGameData = () => { 
-  const min = 1;
-  const max = 99;
-
-  const question = randomInteger(min, max);
-    
+const gererateGameData = () => {
+  const question = randomInteger(minMumber, maxNumber);
   const correctAnswer = isEven(question) ? 'yes' : 'no';
-    
   return makeGameData(question, correctAnswer);
 };
 
