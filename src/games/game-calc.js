@@ -16,8 +16,8 @@ const randomOperator = (operations) => {
 
 // find an answer
 
-const calcAnswer = (operatorStr, calcArg1, calcArg2) => {
-  switch (operatorStr) {
+const calcAnswer = (operator, calcArg1, calcArg2) => {
+  switch (operator) {
     case '-':
       return calcArg1 - calcArg2;
     case '+':
