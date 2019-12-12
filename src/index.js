@@ -3,7 +3,7 @@ import { getQuestion, getCorrectAnswer } from './function-lib';
 
 // definitions
 const accStartValue = 0;
-const correctToEnd = 3; // correct game iterrations number
+const questionCount = 3;
 
 // main cycle
 const mainGame = (gameTask, gererateGameData) => {
@@ -12,7 +12,7 @@ const mainGame = (gameTask, gererateGameData) => {
   console.log(`Hello, ${userName}!\n`);
 
   const mainGameIter = (gameAcc) => {
-    if (gameAcc === correctToEnd) return console.log(`Congratulations, ${userName}!\n`);
+    if (gameAcc === questionCount) return console.log(`Congratulations, ${userName}!\n`);
     const data = gererateGameData();
     const question = getQuestion(data);
     const correctAnswer = getCorrectAnswer(data);
