@@ -9,21 +9,18 @@ const gameTask = 'What is the result of the expression?';
 // random operator
 const operations = '-+*';
 
-const randomOperator = (operations) => {
+const randomOperator = (opLine) => {
   const startPos = 0;
-  return operations[randomInteger(startPos, operations.length - 1)];
+  return operations[randomInteger(startPos, opLine.length - 1)];
 };
 
 // find an answer
 const calcAnswer = (operator, calcArg1, calcArg2) => {
-  switch (operator) {
-    case '-':
-      return calcArg1 - calcArg2;
-    case '+':
-      return calcArg1 + calcArg2;
-    case '*':
-      return calcArg1 * calcArg2;
-  }
+  let answer = 0;
+  if (operator === '-') answer = calcArg1 - calcArg2;
+  if (operator === '+') answer = calcArg1 + calcArg2;
+  if (operator === '*') answer = calcArg1 * calcArg2;
+  return answer;
 };
 
 // generate game data
