@@ -21,11 +21,12 @@ const gererateGameData = () => {
   const startAcc = '';
   const startCount = 1;
 
-  const buildQuestion = (acc, count) => { 
+  const buildQuestion = (acc, count) => {
+    let newAcc = acc;
     if (count > hiddenMaxPosition) return acc;
-    if (count === hidden) acc = `${acc} ..`;
-    else acc = `${acc} ${calcElement(startNum, increment, count)}`;
-    return buildQuestion(acc, count + 1);
+    if (count === hidden) newAcc = `${acc} ..`;
+    else newAcc = `${acc} ${calcElement(startNum, increment, count)}`;
+    return buildQuestion(newAcc, count + 1);
   };
 
   const question = buildQuestion(startAcc, startCount);
