@@ -7,9 +7,7 @@ const maxNumber = 99;
 const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 // check even odd
-const isEven = (num) => {
-  return num % 2 === 0 ? true : false;
-};
+const isEven = (num) => num % 2 === 0;
 
 // generate game data
 const gererateGameData = () => {
