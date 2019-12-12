@@ -17,13 +17,12 @@ const mainGame = (gameTask, gererateGameData) => {
     const question = getQuestion(data);
     const correctAnswer = getCorrectAnswer(data);
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
-    if (correctAnswer === userAnswer) {
-      console.log('Correct!');
-      return mainGameIter(gameAcc + 1);
+    if (correctAnswer !== userAnswer) {
+      console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!\n`);
+      mainGameIter(accStartValue);
     }
-    console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!\n`);
-    mainGameIter(accStartValue);
-    return undefined;
+    console.log('Correct!');
+    return mainGameIter(gameAcc + 1);
   };
 
   mainGameIter(accStartValue);
