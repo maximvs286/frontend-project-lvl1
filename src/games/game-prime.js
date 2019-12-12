@@ -1,14 +1,14 @@
 import mainGame from '../index';
 import { randomInteger, makeGameData } from '../finction-lib';
 
-// rules string const
-
+// definitions
+const primeMin = 1;
+const primeMax = 99;
+const countStart = 2;
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 // find an answer
-
-const isPrime = (num) => {
-  const countStart = 2;
+const calcAnswer = (num) => {
 
   const iter = (num, count) => {
     if (count === num) return 'yes';
@@ -20,14 +20,9 @@ const isPrime = (num) => {
 };
 
 // generate game data
-
 const gererateGameData = () => {
-  const primeMin = 1;
-  const primeMax = 99;
   const primeCandidate = randomInteger(primeMin, primeMax);
-
-  const correctAnswer = isPrime(primeCandidate);
-
+  const correctAnswer = calcAnswer(primeCandidate);
   return makeGameData(primeCandidate, correctAnswer);
 };
 
