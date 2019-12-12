@@ -21,14 +21,14 @@ const gererateGameData = () => {
   const startAcc = '';
   const startCount = 1;
 
-  const buildString = (acc, count) => { 
+  const buildQuestion = (acc, count) => { 
     if (count > hiddenMaxPosition) return acc;
     if (count === hidden) acc = `${acc} ..`;
     else acc = `${acc} ${calcElement(startNum, increment, count)}`;
-    return buildString(acc, count + 1);
+    return buildQuestion(acc, count + 1);
   };
 
-  const question = buildString(startAcc, startCount);
+  const question = buildQuestion(startAcc, startCount);
   const correctAnswer = calcElement(startNum, increment, hidden).toString();
   return makeGameData(question, correctAnswer);
 };
