@@ -17,7 +17,7 @@ const calcGCD = (arg1, arg2) => {
     if (arg1 % number === 0 && arg2 % number === 0) return number;
     return findingCycle(number - 1);
   };
-    
+
   return findingCycle(min);
 };
 
