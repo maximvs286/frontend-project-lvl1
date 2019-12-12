@@ -23,6 +23,7 @@ const mainGame = (gameTask, gererateGameData) => {
     }
     console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!\n`);
     mainGameIter(accStartValue);
+    return undefined;
   };
 
   mainGameIter(accStartValue);
