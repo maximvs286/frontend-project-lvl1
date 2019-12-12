@@ -11,7 +11,7 @@ const hiddenMaxPosition = 10;
 const gameTask = 'What number is missing in the progression?';
 
 // calc a prog element
-const calcProgressionElement = (startNum, increment, position) => increment * position + startNum;
+const calcElement = (startNum, increment, position) => increment * position + startNum;
 
 // generate game data
 const gererateGameData = () => {
@@ -21,15 +21,15 @@ const gererateGameData = () => {
   const startAcc = '';
   const startCount = 1;
 
-  const buildProgressionString = (acc, count) => { 
+  const buildString = (acc, count) => { 
     if (count > hiddenMaxPosition) return acc;
     if (count === hidden) acc = `${acc} ..`;
-    else acc = `${acc} ${calcProgressionElement(startNum, increment, count)}`;
-    return buildProgressionString(acc, count + 1);
+    else acc = `${acc} ${calcElement(startNum, increment, count)}`;
+    return buildString(acc, count + 1);
   };
 
-  const question = buildProgressionString(startAcc, startCount);
-  const correctAnswer = calcProgressionElement(startNum, increment, hidden).toString();
+  const question = buildString(startAcc, startCount);
+  const correctAnswer = calcElement(startNum, increment, hidden).toString();
   return makeGameData(question, correctAnswer);
 };
 
