@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { getQuestion, getCorrectAnswer } from './finction-lib';
 
-// definition
+// definitions
 const accStartValue = 0;
 const correctToEnd = 3; // correct game iterrations number
 
