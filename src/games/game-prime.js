@@ -9,13 +9,12 @@ const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 // find an answer
 const calcAnswer = (num) => {
-
-  const iter = (num, count) => {
-    if (count === num) return 'yes';
-    if (num % count === 0) return 'no';
-    return iter(num, count + 1);
+  const iter = (iterNum, count) => {
+    if (count === iterNum) return 'yes';
+    if (iterNum % count === 0) return 'no';
+    return iter(iterNum, count + 1);
   };
-    
+
   return iter(num, countStart);
 };
 
