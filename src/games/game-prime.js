@@ -1,5 +1,5 @@
 import mainGame from '../index';
-import { randomInteger, makeGameData } from '../finction-lib';
+import { randomInteger, makeGameData } from '../function-lib';
 
 // definitions
 const primeMin = 1;
