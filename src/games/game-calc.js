@@ -1,12 +1,12 @@
 import mainGame from '../index';
 import { randomInteger, makeGameData } from '../finction-lib';
 
-// rules string const
-
+// definitions
+const calcArgMin = 1;
+const calcArgMax = 10; // '10' for easy mind calculate
 const gameTask = 'What is the result of the expression?';
 
 // random operator
-
 const operations = '-+*';
 
 const randomOperator = (operations) => {
@@ -15,7 +15,6 @@ const randomOperator = (operations) => {
 };
 
 // find an answer
-
 const calcAnswer = (operator, calcArg1, calcArg2) => {
   switch (operator) {
     case '-':
@@ -28,10 +27,7 @@ const calcAnswer = (operator, calcArg1, calcArg2) => {
 };
 
 // generate game data
-
 const gererateGameData = () => {
-  const calcArgMin = 1;
-  const calcArgMax = 10; // '10' for easy mind calculate
   const operatorStr = randomOperator(operations);
   const calcArg1 = randomInteger(calcArgMin, calcArgMax);
   const calcArg2 = randomInteger(calcArgMin, calcArgMax);
@@ -43,7 +39,6 @@ const gererateGameData = () => {
 };
 
 // game start
-
 const startGame = () => {
   mainGame(gameTask, gererateGameData);
 };
