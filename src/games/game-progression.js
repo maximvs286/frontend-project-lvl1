@@ -14,7 +14,7 @@ const gameTask = 'What number is missing in the progression?';
 // calc a prog element
 const calcElement = (startNum, increment, position) => increment * position + startNum;
 
-// composeQuestion
+// compose question string
 const composeQuestion = (acc, counter, startNum, increment, hidden) => {
   let newAcc = acc;
   if (counter > elementCount) return acc;
