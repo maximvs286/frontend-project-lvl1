@@ -10,7 +10,7 @@ const gameTask = 'Find the greatest common divisor of given numbers.';
 const calcGCD = (arg1, arg2) => {
   const minEvenDivisor = 2;
   const minGCDEver = 1;
-  const min = (arg1 <= arg2) ? arg1 : arg2;
+  const min = (arg1 < arg2) ? arg1 : arg2;
 
   const findGCD = (number) => {
     if (min < minEvenDivisor) return minGCDEver;
