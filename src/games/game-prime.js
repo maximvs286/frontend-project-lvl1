@@ -2,16 +2,16 @@ import mainGame from '../index';
 import { randomInteger, makeGameData } from '../function-lib';
 
 // definitions
-const primeMin = 1;
-const primeMax = 99;
+const min = 1;
+const max = 99;
 const countStart = 2;
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 // find an answer
-const calcAnswer = (num) => {
+const isPrime = (num) => {
   const iter = (iterNum, count) => {
-    if (count === iterNum) return 'yes';
-    if (iterNum % count === 0) return 'no';
+    if (count === iterNum) return true;
+    if (iterNum % count === 0) return false;
     return iter(iterNum, count + 1);
   };
 
@@ -20,9 +20,9 @@ const calcAnswer = (num) => {
 
 // generate game data
 const gererateGameData = () => {
-  const primeCandidate = randomInteger(primeMin, primeMax);
-  const correctAnswer = calcAnswer(primeCandidate);
-  return makeGameData(primeCandidate, correctAnswer);
+  const question = randomInteger(min, max);
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
+  return makeGameData(question, correctAnswer);
 };
 
 // game start
