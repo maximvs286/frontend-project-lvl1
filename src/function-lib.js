@@ -10,3 +10,6 @@ export const randomInteger = (min, max) => {
 export const makeGameData = (quesion, correctAnswer) => cons(quesion, correctAnswer);
 export const getQuestion = (gameData) => car(gameData);
 export const getCorrectAnswer = (gameData) => cdr(gameData);
+
+// find minimum from two numbers
+export const findMin = (arg1, arg2) => (arg1 < arg2 ? arg1 : arg2);

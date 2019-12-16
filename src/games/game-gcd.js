@@ -1,13 +1,10 @@
 import startEngine from '../index';
-import { randomInteger, makeGameData } from '../function-lib';
+import { randomInteger, makeGameData, findMin } from '../function-lib';
 
 // rules string const
 const gcdMin = 1;
 const gcdMax = 10; // '10' for easy mind calculate
 const gameTask = 'Find the greatest common divisor of given numbers.';
-
-// find minimum from two numbers
-const findMin = (arg1, arg2) => (arg1 < arg2 ? arg1 : arg2);
 
 // find an answer
 const calcGCD = (arg1, arg2) => {
