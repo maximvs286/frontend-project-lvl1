@@ -15,11 +15,11 @@ const randomizeOperator = (operatorsLine) => {
 };
 
 // find an answer
-const calcAnswer = (operator, calcArg1, calcArg2) => {
+const calcAnswer = (operator, arg1, arg2) => {
   let answer = 0;
-  if (operator === '-') answer = calcArg1 - calcArg2;
-  if (operator === '+') answer = calcArg1 + calcArg2;
-  if (operator === '*') answer = calcArg1 * calcArg2;
+  if (operator === '-') answer = arg1 - arg2;
+  if (operator === '+') answer = arg1 + arg2;
+  if (operator === '*') answer = arg1 * arg2;
   return answer;
 };
 
