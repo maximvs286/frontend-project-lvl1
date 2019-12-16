@@ -4,21 +4,21 @@ import { randomInteger, makeGameData } from '../function-lib';
 // rules string const
 const gcdMin = 1;
 const gcdMax = 10; // '10' for easy mind calculate
-const minEvenDivisor = 2;
-const minGCDEver = 1;
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
 // find an answer
 const calcGCD = (arg1, arg2) => {
+  const minEvenDivisor = 2;
+  const minGCDEver = 1;
   const min = (arg1 <= arg2) ? arg1 : arg2;
 
-  const findingCycle = (number) => {
+  const findGCD = (number) => {
     if (min < minEvenDivisor) return minGCDEver;
     if (arg1 % number === 0 && arg2 % number === 0) return number;
-    return findingCycle(number - 1);
+    return findGCD(number - 1);
   };
 
-  return findingCycle(min);
+  return findGCD(min);
 };
 
 // generate game data
