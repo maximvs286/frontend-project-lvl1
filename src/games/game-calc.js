@@ -2,8 +2,8 @@ import mainGame from '../index';
 import { randomInteger, makeGameData } from '../function-lib';
 
 // definitions
-const calcArgMin = 1;
-const calcArgMax = 10; // '10' for easy mind calculate
+const argMin = 1;
+const argMax = 10; // '10' for easy mind calculate
 const gameTask = 'What is the result of the expression?';
 
 // random operator
@@ -30,12 +30,12 @@ const calcAnswer = (operator, arg1, arg2) => {
 
 // generate game data
 const gererateGameData = () => {
-  const operatorStr = randomizeOperator(operations);
-  const calcArg1 = randomInteger(calcArgMin, calcArgMax);
-  const calcArg2 = randomInteger(calcArgMin, calcArgMax);
+  const operator = randomizeOperator(operations);
+  const arg1 = randomInteger(argMin, argMax);
+  const arg2 = randomInteger(argMin, argMax);
 
-  const question = `${calcArg1} ${operatorStr} ${calcArg2}`;
-  const correctAnswer = calcAnswer(operatorStr, calcArg1, calcArg2).toString();
+  const question = `${arg1} ${operator} ${arg2}`;
+  const correctAnswer = calcAnswer(operator, arg1, arg2).toString();
 
   return makeGameData(question, correctAnswer);
 };
