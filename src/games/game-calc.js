@@ -16,11 +16,16 @@ const randomizeOperator = (operatorsLine) => {
 
 // find an answer
 const calcAnswer = (operator, arg1, arg2) => {
-  let answer = 0;
-  if (operator === '-') answer = arg1 - arg2;
-  if (operator === '+') answer = arg1 + arg2;
-  if (operator === '*') answer = arg1 * arg2;
-  return answer;
+  switch (operator) {
+    case '-':
+      return arg1 - arg2;
+    case '+':
+      return arg1 + arg2;
+    case '*':
+      return arg1 * arg2;
+    default:
+      return NaN;
+  }
 };
 
 // generate game data
