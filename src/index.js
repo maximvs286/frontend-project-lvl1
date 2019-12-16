@@ -11,7 +11,7 @@ const startEngine = (gameTask, gererateGameData) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
-  const engineIter = (gameAcc) => {
+  const cycleGame = (gameAcc) => {
     if (gameAcc === questionCount) return console.log(`Congratulations, ${userName}!\n`);
     const data = gererateGameData();
     const question = getQuestion(data);
@@ -19,13 +19,13 @@ const startEngine = (gameTask, gererateGameData) => {
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
-      return engineIter(gameAcc + 1);
+      return cycleGame(gameAcc + 1);
     }
     console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!\n`);
-    return engineIter(startValue); // it returns "undefined", it's a way the recursion process using
+    return cycleGame(startValue); // it returns "undefined", it's a way the recursion process using
   };
 
-  engineIter(startValue);
+  cycleGame(startValue);
 };
 
 export default startEngine;
