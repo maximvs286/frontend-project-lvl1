@@ -9,7 +9,7 @@ const gameTask = 'What is the result of the expression?';
 // random operator
 const operations = '-+*';
 
-const randomOperator = (operatorsLine) => {
+const randomizeOperator = (operatorsLine) => {
   const startPos = 0;
   return operations[randomInteger(startPos, operatorsLine.length - 1)];
 };
@@ -25,7 +25,7 @@ const calcAnswer = (operator, calcArg1, calcArg2) => {
 
 // generate game data
 const gererateGameData = () => {
-  const operatorStr = randomOperator(operations);
+  const operatorStr = randomizeOperator(operations);
   const calcArg1 = randomInteger(calcArgMin, calcArgMax);
   const calcArg2 = randomInteger(calcArgMin, calcArgMax);
 
