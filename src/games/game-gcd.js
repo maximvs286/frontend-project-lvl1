@@ -6,11 +6,14 @@ const gcdMin = 1;
 const gcdMax = 10; // '10' for easy mind calculate
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
+// find minimum from two numbers
+const findMin = (arg1, arg2) => (arg1 < arg2 ? arg1 : arg2);
+
 // find an answer
 const calcGCD = (arg1, arg2) => {
   const minEvenDivisor = 2;
   const minGCDEver = 1;
-  const min = arg1 < arg2 ? arg1 : arg2;
+  const min = findMin(arg1, arg2);
 
   const findGCD = (number) => {
     if (min < minEvenDivisor) return minGCDEver;
