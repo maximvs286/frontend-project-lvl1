@@ -1,4 +1,4 @@
-import mainGame from '../index';
+import startEngine from '../index';
 import { randomInteger, makeGameData } from '../function-lib';
 
 // rules string const
@@ -32,7 +32,7 @@ const gererateGameData = () => {
 
 // game start
 const startGame = () => {
-  mainGame(gameTask, gererateGameData);
+  startEngine(gameTask, gererateGameData);
 };
 
 export default startGame;
