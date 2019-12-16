@@ -2,30 +2,30 @@ import readlineSync from 'readline-sync';
 import { getQuestion, getCorrectAnswer } from './function-lib';
 
 // definitions
-const accStartValue = 0;
+const startValue = 0;
 const questionCount = 3;
 
 // main cycle
-const mainGame = (gameTask, gererateGameData) => {
-  console.log(`\nWelcome to the Brain Games!\n${gameTask}\n`); // greeting function
+const startEngine = (gameTask, gererateGameData) => {
+  console.log(`\nWelcome to the Brain Games!\n${gameTask}\n`);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
-  const mainGameIter = (gameAcc) => {
+  const engineIter = (gameAcc) => {
     if (gameAcc === questionCount) return console.log(`Congratulations, ${userName}!\n`);
     const data = gererateGameData();
     const question = getQuestion(data);
     const correctAnswer = getCorrectAnswer(data);
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
-    if (correctAnswer !== userAnswer) {
-      console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!\n`);
-      mainGameIter(accStartValue);
+    if (correctAnswer === userAnswer) {
+      console.log('Correct!');
+      return engineIter(gameAcc + 1);
     }
-    console.log('Correct!');
-    return mainGameIter(gameAcc + 1);
+    console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!\n`);
+    return engineIter(startValue); // it returns "undefined", it's a way the recursion process using
   };
 
-  mainGameIter(accStartValue);
+  engineIter(startValue);
 };
 
-export default mainGame;
+export default startEngine;
