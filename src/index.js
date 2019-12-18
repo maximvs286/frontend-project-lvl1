@@ -3,7 +3,7 @@ import { getQuestion, getCorrectAnswer } from './function-lib';
 
 // definitions
 const startValue = 0;
-const questionCount = 3;
+const questionsCount = 3;
 
 // main cycle
 const startEngine = (gameTask, gererateGameData) => {
@@ -12,7 +12,7 @@ const startEngine = (gameTask, gererateGameData) => {
   console.log(`Hello, ${userName}!\n`);
 
   const cycleGame = (gameAcc) => {
-    if (gameAcc === questionCount) return console.log(`Congratulations, ${userName}!\n`);
+    if (gameAcc === questionsCount) return console.log(`Congratulations, ${userName}!\n`);
     const data = gererateGameData();
     const question = getQuestion(data);
     const correctAnswer = getCorrectAnswer(data);
