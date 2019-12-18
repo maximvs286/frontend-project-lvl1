@@ -10,8 +10,8 @@ const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 // find an answer
 const isPrime = (num) => {
   const iter = (iterNum, count) => {
+    if (iterNum % count === 0 || iterNum < count) return false;
     if (count === iterNum) return true;
-    if (iterNum % count === 0) return false;
     return iter(iterNum, count + 1);
   };
 
