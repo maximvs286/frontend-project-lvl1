@@ -11,22 +11,22 @@ This repository was created as a training project for JavaScript.
 $ make install
 ```
 
-### brain-even demo
+## brain-even demo
 
 [![asciicast](https://asciinema.org/a/283478.svg)](https://asciinema.org/a/283478)
 
-### brain-calc demo
+## brain-calc demo
 
 [![asciicast](https://asciinema.org/a/283481.svg)](https://asciinema.org/a/283481)
 
-### brain-gcd demo
+## brain-gcd demo
 
 [![asciicast](https://asciinema.org/a/283484.svg)](https://asciinema.org/a/283484)
 
-### brain-progression demo
+## brain-progression demo
 
 [![asciicast](https://asciinema.org/a/283487.svg)](https://asciinema.org/a/283487)
 
-### brain-prime demo
+## brain-prime demo
 
 [![asciicast](https://asciinema.org/a/283489.svg)](https://asciinema.org/a/283489)
