@@ -12,13 +12,13 @@ const calcGCD = (arg1, arg2) => {
   const minGCDEver = 1;
   const min = findMin(arg1, arg2);
 
-  const findGCD = (number) => {
+  const iter = (number) => {
     if (min < minEvenDivisor) return minGCDEver;
     if (arg1 % number === 0 && arg2 % number === 0) return number;
-    return findGCD(number - 1);
+    return iter(number - 1);
   };
 
-  return findGCD(min);
+  return iter(min);
 };
 
 // generate game data
