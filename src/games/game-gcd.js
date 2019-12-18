@@ -1,4 +1,4 @@
-import startEngine from '../index';
+import startEngine from '..';
 import { randomInteger, makeGameData, findMin } from '../function-lib';
 
 // rules string const

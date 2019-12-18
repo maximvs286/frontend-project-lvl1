@@ -1,4 +1,4 @@
-import startEngine from '../index';
+import startEngine from '..';
 import { randomInteger, makeGameData } from '../function-lib';
 
 // definitions
