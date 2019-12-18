@@ -7,7 +7,7 @@ This repository was created as a training project for JavaScript. It has five si
 * Even - Answer "yes" if the number is even, otherwise answer "no".
 * Calc - Calculate the result of an expression.
 * GCD - Find the greatest common divisor of given numbers.
-* Progression - Find number is missing in the progression.
+* Progression - Find number is missing in a progression.
 * Prime - Answer "yes" if given number is prime. Otherwise answer "no".
 
 ## Setup
