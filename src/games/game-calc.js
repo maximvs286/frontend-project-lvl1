@@ -9,9 +9,9 @@ const gameTask = 'What is the result of the expression?';
 // random operator
 const operations = '-+*';
 
-const randomizeOperator = (operatorsLine) => {
+const randomizeOperator = (mathOperations) => {
   const startPos = 0;
-  return operations[randomInteger(startPos, operatorsLine.length - 1)];
+  return mathOperations[randomInteger(startPos, mathOperations.length - 1)];
 };
 
 // find an answer
