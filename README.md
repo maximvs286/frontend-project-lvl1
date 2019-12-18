@@ -11,6 +11,24 @@ This repository was created as a training project for JavaScript.
 $ make install
 ```
 
+## Run games
+
+```sh
+$ brain-even
+```
+```sh
+$ brain-calc
+```
+```sh
+$ brain-gcd
+```
+```sh
+$ brain-progression
+```
+```sh
+$ brain-prime
+```
+
 ## brain-even demo
 
 [![asciicast](https://asciinema.org/a/283478.svg)](https://asciinema.org/a/283478)
