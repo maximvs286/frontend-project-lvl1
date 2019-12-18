@@ -21,7 +21,8 @@ const startEngine = (gameTask, gererateGameData) => {
       console.log('Correct!');
       return cycleGame(gameAcc + 1);
     }
-    console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!\n`);
+    console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    console.log(`Let's try again, ${userName}!\n`);
     return cycleGame(startValue); // it returns "undefined", it's a way the recursion process using
   };
 
