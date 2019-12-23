@@ -1,12 +1,9 @@
 import startEngine from '..';
 import { randomInteger, makeGameData } from '../function-lib';
 
-// definitions
 const argMin = 1;
-const argMax = 10; // '10' for easy mind calculate
+const argMax = 10;
 const gameTask = 'What is the result of the expression?';
-
-// random operator
 const operations = '-+*';
 
 const randomizeOperator = (mathOperations) => {
@@ -14,7 +11,6 @@ const randomizeOperator = (mathOperations) => {
   return mathOperations[randomInteger(startPos, mathOperations.length - 1)];
 };
 
-// find an answer
 const calcAnswer = (operator, arg1, arg2) => {
   switch (operator) {
     case '-':
@@ -28,7 +24,6 @@ const calcAnswer = (operator, arg1, arg2) => {
   }
 };
 
-// generate game data
 const gererateGameData = () => {
   const operator = randomizeOperator(operations);
   const arg1 = randomInteger(argMin, argMax);
@@ -40,7 +35,6 @@ const gererateGameData = () => {
   return makeGameData(question, correctAnswer);
 };
 
-// game start
 const startGame = () => {
   startEngine(gameTask, gererateGameData);
 };
