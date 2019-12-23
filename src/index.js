@@ -10,18 +10,23 @@ const startEngine = (gameTask, gererateGameData) => {
   console.log(`Hello, ${userName}!\n`);
 
   const cycleGame = (counter) => {
-    if (counter === questionsCount) return console.log(`Congratulations, ${userName}!\n`);
+    if (counter === questionsCount) => {
+      console.log(`Congratulations, ${userName}!\n`);
+      return;
+    };
     const data = gererateGameData();
     const question = getQuestion(data);
     const correctAnswer = getCorrectAnswer(data);
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
-      return cycleGame(counter + 1);
+      cycleGame(counter + 1);
+      return;
     }
     console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
     console.log(`Let's try again, ${userName}!\n`);
-    return cycleGame(startValue);
+    cycleGame(startValue);
+    return;
   };
 
   cycleGame(startValue);
