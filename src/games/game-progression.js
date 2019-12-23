@@ -23,9 +23,12 @@ const composeQuestion = (acc, counter, startNum, increment, hidden) => {
 const gererateGameData = () => {
   const startNum = randomInteger(startMinValue, startMaxValue);
   const increment = randomInteger(incrementMinValue, incrementMaxValue);
-  const hidden = randomInteger(elementCounter, length);
-  const question = composeQuestion(startAcc, elementCounter, startNum, increment, hidden);
-  const correctAnswer = calcElement(startNum, increment, hidden).toString();
+  const hiddenElementIndex = randomInteger(elementCounter, length);
+  const question = composeQuestion(
+    startAcc, elementCounter, startNum, increment,
+    hiddenElementIndex,
+  );
+  const correctAnswer = calcElement(startNum, increment, hiddenElementIndex).toString();
   return makeGameData(question, correctAnswer);
 };
 
