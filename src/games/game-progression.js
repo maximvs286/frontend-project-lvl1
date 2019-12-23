@@ -14,7 +14,7 @@ const calcElement = (startNum, increment, position) => increment * position + st
 
 const composeQuestion = (acc, counter, startNum, increment, hiddenElementIndex) => {
   let newAcc = acc;
-  if (counter > length) return acc;
+  if (counter > length) return newAcc;
   if (counter === hiddenElementIndex) newAcc = `${acc} ..`;
   else newAcc = `${acc} ${calcElement(startNum, increment, counter)}`;
   return composeQuestion(newAcc, counter + 1, startNum, increment, hiddenElementIndex);
