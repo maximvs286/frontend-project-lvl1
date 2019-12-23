@@ -10,10 +10,10 @@ const startEngine = (gameTask, gererateGameData) => {
   console.log(`Hello, ${userName}!\n`);
 
   const cycleGame = (counter) => {
-    if (counter === questionsCount) => {
+    if (counter === questionsCount) {
       console.log(`Congratulations, ${userName}!\n`);
       return;
-    };
+    }
     const data = gererateGameData();
     const question = getQuestion(data);
     const correctAnswer = getCorrectAnswer(data);
@@ -26,7 +26,6 @@ const startEngine = (gameTask, gererateGameData) => {
     console.log(`\n'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
     console.log(`Let's try again, ${userName}!\n`);
     cycleGame(startValue);
-    return;
   };
 
   cycleGame(startValue);
