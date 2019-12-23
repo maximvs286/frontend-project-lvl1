@@ -12,12 +12,12 @@ const gameTask = 'What number is missing in the progression?';
 
 const calcElement = (startNum, increment, position) => increment * position + startNum;
 
-const composeQuestion = (acc, counter, startNum, increment, hidden) => {
+const composeQuestion = (acc, counter, startNum, increment, hiddenElementIndex) => {
   let newAcc = acc;
   if (counter > length) return acc;
-  if (counter === hidden) newAcc = `${acc} ..`;
+  if (counter === hiddenElementIndex) newAcc = `${acc} ..`;
   else newAcc = `${acc} ${calcElement(startNum, increment, counter)}`;
-  return composeQuestion(newAcc, counter + 1, startNum, increment, hidden);
+  return composeQuestion(newAcc, counter + 1, startNum, increment, hiddenElementIndex);
 };
 
 const gererateGameData = () => {
