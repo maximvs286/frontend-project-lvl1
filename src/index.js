@@ -17,7 +17,8 @@ const startEngine = (gameTask, gererateGameData) => {
     const data = gererateGameData();
     const question = getQuestion(data);
     const correctAnswer = getCorrectAnswer(data);
-    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
       cycleGame(counter + 1);
