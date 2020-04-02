@@ -5,7 +5,7 @@ const cons = (a, b) => (message) => {
     case 'cdr':
       return b;
     default:
-      return undefined;
+      return null;
   }
 };
 
