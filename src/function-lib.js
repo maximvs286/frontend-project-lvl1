@@ -1,5 +1,3 @@
-// import { cons, car, cdr } from '@hexlet/pairs';
-
 const cons = (a, b) => (message) => {
   switch (message) {
     case 'car':
